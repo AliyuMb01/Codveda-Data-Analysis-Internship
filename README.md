@@ -1,50 +1,57 @@
 # Data Analysis Internship Projects - Codveda Technologies 📊 Python & Power BI
 
 Welcome to my project repository for the Data Analysis Internship at **Codveda Technologies**! This repository showcases end-to-end data pipelines, financial dashboard creation, and Natural Language Processing (NLP) sentiment analysis.
+## 📌 Project Overview
+
+This repository demonstrates an end-to-end data analytics workflow using real-world datasets across three distinct domains:
+
+1. **Exploratory Data Analysis (EDA):** Morphometric classification and summary statistics using the classic Iris dataset.
+2. **Financial Time Series Analysis:** Trend, seasonality, and residual breakdown of Apple Inc. (`AAPL`) stock prices.
+3. **Sentiment & Text Analysis:** Preprocessing and sentiment evaluation on unstructured customer/user feedback data.
 
 ---
 
-## 🛠️ Tools & Technologies
-- **Python:** Pandas, NumPy, Matplotlib, Seaborn, NLTK, TextBlob, WordCloud
-- **Business Intelligence:** Microsoft Power BI
-- **Environment:** Google Colab, Power BI Desktop
+## 📂 Datasets Used
+
+* **`1) iris.csv`**: Contains sepal and petal measurements across three plant species.
+* **`2) Stock Prices Data Set.csv`**: Historical daily stock market data including open, high, low, close prices, and trading volumes.
+* **`3) Sentiment dataset.csv`**: Unstructured text dataset used for natural language processing and sentiment classification.
 
 ---
 
-## 📁 Repository Structure
-├── Datasets/
-│   ├── Sentiment dataset.csv
-│   └── Stock Prices Data Set.csv
-├── Notebooks/
-│   └── Sentiment_Analysis_and_NLP.ipynb
-├── Dashboards/
-│   └── Stock_Performance_Dashboard.pbix
-└── README.md
+## 🛠️ Key Tasks & Technical Implementation
 
-## 📌 Project Highlights & Key Modules
+### Task 1: Exploratory Data Analysis (`iris.csv`)
+* Audited dataset structure, verified column data types, and checked for missing values.
+* Conducted deduplication to ensure data quality and integrity.
+* Computed key statistical metrics (mean, median, standard deviation, min, max) across feature measurements to analyze class distribution.
 
-### 1. Stock Performance Analysis (Power BI)
-- **Objective:** Analyze multi-year stock market metrics (2015–2017) to uncover market trends and average trading volumes.
-- **Key Features:**
-  - Dynamic stock ticker (`symbol`) filtering for seamless comparison (e.g., A, AAL, AAP).
-  - Time-series line chart tracking **Average of Close** prices over time.
-  - Executive KPI cards highlighting **Average Close** (`116.84`) and **Average Volume** (`45.17M`).
+### Task 2: Stock Price Time Series Decomposition (`AAPL`)
+* Filtered financial data strictly for Apple Inc. (`AAPL`) daily closing prices (2014–2017).
+* Preprocessed date fields into a datetime index and resampled the series to a business-daily frequency (`'B'`), using forward-fill (`.ffill()`) to account for non-trading market days.
+* Applied additive time series decomposition (`seasonal_decompose`) using an annual trading window (`period=252`) to isolate:
+  * **Observed:** Daily raw price movements.
+  * **Trend:** Multi-year directional stock trajectory.
+  * **Seasonal:** Recurring annual cyclical patterns.
+  * **Residuals:** Unexplained market noise and unexpected volatility.
 
-### 2. Social Media Sentiment Analysis (Python & NLP)
-- **Objective:** Process and classify unstructured social media text across multiple platforms (Twitter, Instagram, Facebook).
-- **Workflow:**
-  1. **Preprocessing:** Text cleaning with regex, lowercasing, stop-word removal, and **NLTK WordNet Lemmatization**.
-  2. **Sentiment Scoring:** Polarity assessment using **TextBlob** to classify posts into *Positive*, *Neutral*, and *Negative*.
-  3. **Visualization:** Seaborn distribution plots across platforms and custom **WordCloud** theme maps.
+### Task 3: Text & Sentiment Analysis Workflow
+* Loaded and preprocessed `3) Sentiment dataset.csv` for natural language processing.
+* Evaluated sentiment distribution trends across feedback entries to uncover underlying user perception patterns.
 
----
+## ⚙️ Tech Stack & Dependencies
 
-## 💡 Key Insights
-- **Platform Sentiment:** Instagram exhibited the highest proportion of positive posts, whereas Twitter displayed a wider spread across all sentiment categories.
-- **Word Drivers:** Positive sentiment was heavily driven by words like *joy*, *new*, *laughter*, and *life*, while negative sentiment centered around *grief*, *despair*, and *bitter*.
-
+* **Language:** Python 3.x
+* **Environment:** Jupyter Notebook / Google Colab
+* **Data Manipulation:** `pandas`, `numpy`
+* **Time Series & Modeling:** `statsmodels`
+* **Data Visualization:** `matplotlib`, `seaborn`
 ---
 
 ## 👤 Author
+Aliyu Muhammad Buba
+Data Analyst Intern @Codveda Technologies
+
+Data Analyst intern @
 - **Name:** Aliyu Muhammad Buba
 - **Role:** Data Analyst Intern at Codveda Technologies

@@ -49,9 +49,6 @@ This repository demonstrates an end-to-end data analytics workflow using real-wo
 ---
 
 ## 👤 Author
-Aliyu Muhammad Buba
-Data Analyst Intern @Codveda Technologies
 
-Data Analyst intern @
 - **Name:** Aliyu Muhammad Buba
 - **Role:** Data Analyst Intern at Codveda Technologies
